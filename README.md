@@ -2,6 +2,8 @@
 
 A new Flutter project.
 ![gambar yuda2](image/mountain.jpg)
+
+hasil akhir
 ![gambar_yuda2](image/hasil.png)
 ## Getting Started
 
