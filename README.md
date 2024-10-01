@@ -1,8 +1,8 @@
 # yuda2
 
 A new Flutter project.
-![gambar yuda1](image/mountain.jpg)
-
+![gambar yuda2](image/mountain.jpg)
+![gambar_yuda2](image/hasil.png)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
