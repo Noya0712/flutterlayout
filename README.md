@@ -5,6 +5,10 @@ A new Flutter project.
 
 hasil akhir
 ![gambar_yuda2](image/hasil.png)
+![gambar_materi](image/1.png)
+![gambar_materi](image/2.png)
+![gambar_materi](image/3.png)
+![gambar_materi](image/4.png)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
