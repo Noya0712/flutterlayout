@@ -3,43 +3,130 @@ import 'package:yuda2/tampungan/image.dart';
 import 'tampungan/title_Section.dart';
 import 'tampungan/text_section.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    const String appTitle = 'Flutter Layout demo';
-    return MaterialApp(
-        title:  appTitle,
-        theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
+    Color color = Theme.of(context).primaryColor;
 
-        useMaterial3: true,
+    // Deklarasi buttonSection dengan 3 kolom yang sejajar secara horizontal
+    Widget buttonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Rata spasi di antara kolom
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'), // Panggil fungsi untuk membangun kolom
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
+    );
+
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Cafe Sunset Of Java merupakan cafe yang '
+            'sangat cocok untuk seseorang yang ingin '
+            'menikmati suasana terbenamnya matahari. '
+            'tempat ini terletak di kota Batu, Malang, Indonesia '
+            'jangan lupa datang kesini bersama keluarga besar anda '
+            'atau dengan kekasih anda🙂.'
+            'Nama : Holut Yudawan '
+            'NIM : 362358302014',
+        softWrap: true, // Membungkus teks jika terlalu panjang
       ),
-      debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: appTitle),
+    );
+
+    Widget titleSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            /* soal 1*/
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                /* soal 2*/
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: const Text(
+                    'Cafe Sunrice Of Java',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const Text(
+                  'Batu, Malang, Indonesia',
+                  style: TextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Icon(
+                /* soal 3*/
+                Icons.star,
+                color: Colors.red,
+              ),
+              SizedBox(width: 4),
+              Text("41"),
+            ],
+          ),
+        ],
+      ),
+    );
+
+    return MaterialApp(
+      title: 'Flutter layout: Holut Yudawan NIM: 362358302014',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter layout demo'),
+        ),
+        body: ListView(
+          children:[
+            Image.asset(
+              'image/cafe1.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
+            titleSection,
+            buttonSection,
+            textSection,
+          ],
+        ),
+      ),
     );
   }
 }
+
+Column _buildButtonColumn(Color color, IconData icon, String label) {
+  return Column(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Icon(icon, color: color),
+      Container(
+        margin: const EdgeInsets.only(top: 8),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: color,
+          ),
+        ),
+      ),
+    ],
+  );
+}
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
