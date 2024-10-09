@@ -5,9 +5,22 @@ A new Flutter project.
 
 hasil akhir
 ![gambar_yuda2](image/hasil.png)
+Widget Column diletakkan di dalam Expanded agar menyesuaikan ruang yang tersedia di Row.
+Teks 'Cafe Sunrice Of Java' ditempatkan dalam Container dengan padding sebesar 8 piksel di bawahnya.
+Teks 'Batu, Malang, Indonesia' diberi warna abu-abu.
+Tambahkan ikon bintang berwarna merah dan teks "41",
+semuanya ditempatkan dalam Container dengan padding sebesar 32 piksel di setiap tepi.
 ![gambar_materi](image/1.png)
+widget Row yang berisi tiga kolom, masing-masing dengan ikon dan teks.
+Warna, ikon, dan teks ditentukan dengan memanggil fungsi _buildButtonColumn.
+Masukkan variabel buttonSection ke dalam body di dalam metode build(), sehingga akan muncul di tampilan aplikasi.
 ![gambar_materi](image/2.png)
+textSection dibuat menggunakan Container dengan padding sebesar 32 piksel di setiap sisi.
+Teks dimasukkan ke dalam Text widget dengan properti softWrap = true, sehingga teks akan membungkus secara otomatis sesuai lebar kolom.
+Variabel textSection ditambahkan ke dalam body pada Scaffold sehingga teks tersebut akan ditampilkan bersama elemen lain di layout.
 ![gambar_materi](image/3.png)
+Buat folder images, tambahkan gambar, dan referensikan di pubspec.yaml
+Gunakan Image.asset dengan BoxFit.cover dan ganti Column dengan ListView untuk mendukung scroll.
 ![gambar_materi](image/4.png)
 ## Getting Started
 
